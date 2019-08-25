@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>popup tutorial</title>
+	<style type="text/css">
+		.popup_background{
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0 ,0.6);
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			/*align-content: center;*/
+			justify-content: center;
+		}
+		.popup{
+			width: 300px;
+			height: 300px;
+			background-color: white;
+			position: relative;
+
+		}
+		.hide_popup{
+			display: none;
+		}
+		.popup1{
+			background-color: red;
+		}
+		.popup2{
+			background-color: blue;
+		}
+		.close{
+			position: absolute;
+			right: 10px;
+			font-size: 25px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		function showPopUp1(){
+			$('.popup_background').removeClass('hide_popup')
+			$('.popup').addClass("hide_popup");
+			$('.popup1').removeClass("hide_popup")
+		}
+
+		function showPopUp2(){
+			$('.popup_background').removeClass('hide_popup')
+			$('.popup').addClass("hide_popup");
+			$('.popup2').removeClass("hide_popup")
+		}
+
+		function closePopUp(){
+			$('.popup_background').addClass('hide_popup')
+		}
+	</script>
+</head>
+<body>
+	<button onclick="showPopUp1()">popup1</button>
+	<button onclick="showPopUp2()">popup2</button>
+	<div class="popup_background hide_popup">
+		<div class="popup popup1 hide_popup">
+			<span class="close" onclick="closePopUp()">+</span>
+		</div>
+		<div class="popup popup2 hide_popup">
+			<span class="close" onclick="closePopUp()">+</span>
+		</div>
+	</div>
+</body>
+</html>
